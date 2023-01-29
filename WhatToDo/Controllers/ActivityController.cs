@@ -28,8 +28,9 @@ public class ActivityController : ControllerBase
         return await _activityService.GetActivityByType(type);
     }
     
+    [Authorize]
     [HttpPost]
-    public async Task<IActionResult> GetActivity(ActivityDto activityDto)
+    public async Task<IActionResult> AddActivity(ActivityDto activityDto)
     { 
         await _activityService.SaveActivity(activityDto);
         
