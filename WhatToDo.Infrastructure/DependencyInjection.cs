@@ -21,10 +21,7 @@ public static class DependencyInjection
 
         services.AddSingleton<IBoredApiClient, BoredApiClient>();
         
-        services.AddHttpClient("BoredApi", client =>
-        {
-            client.BaseAddress = new Uri("https://www.boredapi.com/api/");
-        });
+        services.AddHttpClient<BoredApiClient>();
 
         return services;
     }
